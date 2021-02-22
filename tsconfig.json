@@ -1,6 +1,8 @@
 {
+    "include": ["./static/ts"],
     "compilerOptions": {
-        "rootDir": "static/ts",
+        "rootDir": "./static/ts",
+        "outDir": "./static/js",
         "target": "ES6"
     }
 }
