@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+        "rootDir": "static/ts",
+        "target": "ES6"
+    }
+}
