@@ -1,2 +1,6 @@
 db.sqlite3
 /static/js
+
+# My god, ignore this chonker!
+/node_modules
+
