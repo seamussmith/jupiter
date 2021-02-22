@@ -4,3 +4,4 @@ db.sqlite3
 # My god, ignore this chonker!
 /node_modules
 
+*.pyc
