@@ -1,5 +1,8 @@
 
-<form action="{{ None }}">
+<form action="">
     {% csrf_token %}
-    <button value="{{ button_uuid }}">{{ button_text }}</button>
+    <h1>{{ button_text }}</h1>
+    <button type="submit" value="like" name="val">Like 👍</button>
+    <button type="submit" value="dislike" name="val">Dislike 👎</button>
+    <input type="hidden" name="uuid" value="{{ button_uuid }}" />
 </form>
