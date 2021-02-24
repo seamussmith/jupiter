@@ -30,7 +30,7 @@ def new_button(request):
         last_time = request.session["last_submit"]
         delta = curr_time - last_time
         if delta < SPAM_DELAY:
-            return HttpResponse(f"Dont spam! Please wait {round(20 - delta)} more seconds!")
+            return HttpResponse(f"Dont spam! Please wait {round(SPAM_DELAY - delta)} more seconds!", status=429)
     request.session["last_submit"] = time.time()
     btn = Button.new(body["text"])
     btn.save()
