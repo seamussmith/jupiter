@@ -1,7 +1,7 @@
 
 <form action="{% url "clicker:handle-click" %}" method="post">
     {% csrf_token %}
-    <h1>{{ button.text }} - {{ button.count }}</h1>
+    <h1 style="overflow: hidden;">{{ button.text }} - {{ button.count }}</h1>
     <button type="submit" value="like" name="val">Like 👍</button>
     <button type="submit" value="dislike" name="val">Dislike 👎</button>
     <input type="hidden" name="id" value="{{ button.id }}" />
