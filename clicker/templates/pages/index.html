@@ -8,4 +8,10 @@
     {% for button in buttons %}
         {% Button button %}
     {% endfor %}
+    <form action="{% url 'clicker:new-button' %}" method="POST" style="padding: 50px 0;">
+        {% csrf_token %}
+        <h1>Create your own button: </h1>
+        <input type="text" name="text" placeholder="Your text here" />
+        <input type="submit" />
+    </form>
 {% endblock body %}
