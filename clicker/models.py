@@ -12,6 +12,9 @@ class Button(models.Model):
             text = text
         )
     
+    def __str__(self):
+        return f"{'{'}id: {self.id}, count: {self.count}, text: {self.text}{'}'}"
+
     def like(self):
         self.count += 1
     def dislike(self):
