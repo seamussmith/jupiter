@@ -5,6 +5,7 @@
 {% endblock head %}
 
 {% block body %}
-    <h1>wow</h1>
-    <p>good</p>
+    {% for button in buttons %}
+        {% Button button.id button.text %}
+    {% endfor %}
 {% endblock body %}
