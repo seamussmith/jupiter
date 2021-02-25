@@ -13,7 +13,7 @@ $(".vote-button").on("click", function(e) {
         url: $parent.attr("action"),
         data: `${$parent.serialize()}&val=${$(this).attr("value")}`
     })
-    .done((data: Button) => {
+    .done((data: Button) => {   // POST returns a JSONResponse, and JQuery automatically parses JSON
         $parent.find(".likes").text(data.count)
         $parent.find("button").prop("disabled", false)
     })
