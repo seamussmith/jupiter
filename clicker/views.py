@@ -1,4 +1,5 @@
-from django.http.response import HttpResponse
+import json
+from django.http.response import HttpResponse, JsonResponse
 from django.shortcuts import redirect, render
 from .models import *
 from django.views.decorators.http import require_http_methods
@@ -18,8 +19,10 @@ def handle_click(request):
         btn.like()
     elif body["val"] == "dislike" and btn.count != 0:
         btn.dislike()
+    d = btn.to_dict()
     btn.save()
-    return redirect("clicker:index")
+    print(d)
+    return JsonResponse(d)
 
 SPAM_DELAY = 20
 @require_http_methods(["POST"])
