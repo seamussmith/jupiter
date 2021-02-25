@@ -21,7 +21,6 @@ def handle_click(request):
         btn.dislike()
     d = btn.to_dict()
     btn.save()
-    print(d)
     return JsonResponse(d)
 
 SPAM_DELAY = 20
