@@ -21,3 +21,10 @@ class Button(models.Model):
         self.count -= 1
     def reset(self):
         self.count = 0
+
+    def to_dict(self):
+        return {
+            "count": self.count,
+            "id": self.id,
+            "text": self.text
+        }
