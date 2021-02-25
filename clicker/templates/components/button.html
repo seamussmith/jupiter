@@ -1,9 +1,9 @@
 
-<form action="{% url "clicker:handle-click" %}" method="post">
+<form action="{% url "clicker:handle-click" %}" method="post" class="liker">
     {% csrf_token %}
     <h1 style="overflow: hidden;">{{ button.text }}</h1>
-    <h3>Likes: {{ button.count }}</h3>
-    <button type="submit" value="like" name="val">Like 👍</button>
-    <button type="submit" value="dislike" name="val">Dislike 👎</button>
+    <h3>Likes: <span class="likes">{{ button.count }}</span></h3>
+    <button type="button" value="like" name="val" class="vote-button">Like 👍</button>
+    <button type="button" value="dislike" name="val" class="vote-button">Dislike 👎</button>
     <input type="hidden" name="id" value="{{ button.id }}" />
 </form>
