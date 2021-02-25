@@ -8,7 +8,6 @@ urlpatterns = [
 ]
 
 # REST API
-
 urlpatterns += [
    path("handle-click/", views.handle_click, name="handle-click"),
 ]
