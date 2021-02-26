@@ -7,9 +7,12 @@
 {% endblock head %}
 
 {% block body %}
-    {% for button in buttons %}
-        {% Button button %}
-    {% endfor %}
+    <div class="button-container">
+        {% for button in buttons %}
+            {% Button button %}
+        {% endfor %}
+    </div>
+    
     <form action="{% url 'clicker:new-button' %}" method="POST" style="padding: 50px 0;">
         {% csrf_token %}
         <h1>Create your own button: </h1>
