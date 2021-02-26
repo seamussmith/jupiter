@@ -13,8 +13,8 @@ $(".vote-button").on("click", function(e) {
         url: $parent.attr("action"),
         data: `${$parent.serialize()}&val=${$(this).attr("value")}`
     })
-    .done((data: Button) => {   // POST returns a JSONResponse, and JQuery automatically parses JSON
-        $parent.find(".likes").text(data.count)
+    .done((data: Button) => {                           // POST returns a JSONResponse, and JQuery automatically parses JSON
+        $parent.find(".likes").text(data.count)         // Probs something about MIME types
         $parent.find("button").prop("disabled", false)
     })
     $parent.find("button").prop("disabled", true)
